@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Employee Profile Page</h1>
+    Name : <%=emp.name%><br />
+    Email : <%=emp.email%><br />
+    Designation : <%=emp.designation%><br />
+    <h3>Technical Skills</h3>
+    <!-- Scriplate -->
+    <% emp.skills.forEach((item) => { %>
+        <h4><%= item %></h4>
+    <% }) %>
+  </body>
+</html>

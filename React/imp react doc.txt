@@ -1,0 +1,31 @@
+REACT TYPESCRIPT
+npx create-react-app app-name --template typescript
+npm install bootstrap axios react-router-dom
+
+server: npm init -y      to create package json
+ npm install express mongoose cors nodemon   
+- express:framework of nodejs to create rest API's
+-mongoose: used for mangoDb db
+-cors: used to access server in frontend
+nodemon: refresh the server side code gradually
+
+1st index.js
+BASIC CONNECTIONS
+
+const express=require('express')
+const mongoose=require('mongoose')
+const cors=require('cors')
+
+
+const app=express()
+app.use(cors())
+app.use(express.json())
+
+//connection to db
+mongoose.connect("mongodb://127.0.0.1:27017/CRUD") //db name is CRUD
+
+app.listen(3001,()=>{
+    console.log("server is running");
+})
+
+2. create models

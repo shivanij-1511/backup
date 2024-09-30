@@ -1,0 +1,162 @@
+https://react.dev/learn/start-a-new-react-project
+npx create-react-app app-name --template typescript
+cd app-name
+npm start
+
+JSX: javascript xml
+browser doesn't understand JSX
+bebble is the tool which converts the xml to html, so that browser can understand it.
+
+if and ternary operator
+using ternary opertaor reduces lines of code other than this we use if condition when we have to iterate over all the process and we use ternary operator when we want to iterarte through small chunk.
+
+comments- {/*....*/}
+
+_________________________________-
+22-01-2024
+EVENT HANDLING
+different events:
+
+ChangeEvent
+FormEvent
+MouseEvent
+KeyboardEvent
+FocusEvent
+SyntheticEvemt
+
+HOOKS:
+functions starting with use are called HOOKS.
+we can  make own hooks by combining existing one.
+useState is built in hook by react.
+hooks are more restrictive.
+we can only call HOOKS at the top of our component(or other hooks)
+if we want to use hooks in a conditio or a loop, extract a new component.
+
+
+component data store STATE MANAGEMENT
+State is then internal data store internally
+
+
+
+import { useEffect, useState } from "react";
+
+function Effect() {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      setCoords({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('pointermove', handleMove);
+
+    return () => {
+      console.log('Cleanup Called');
+      window.removeEventListener('pointermove', handleMove);
+    }
+  }, []);
+
+  return (
+    <>
+      <h1>Use Effect {coords.x}, {coords.y}</h1>
+    </>
+  );
+}
+
+export default Effect;
+
+
+
+
+
+
+
+
+
+
+
+
+//if value is passed inside the{} then it is controlled otherwise if empty it is the uncontrolled
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.js
+import React from 'react'
+import FirstComponent from './FirstComponent'
+import Card from './Card';
+
+const App = () => {
+  const data=[1
+  //   {
+  //   name:"Shivani",
+  //   dept:"Comps",
+  //   college:"KKW"
+  // },
+  // {
+  //   name:"Somesh",
+  //   dept:"CSE",
+  //   college:"KKW"
+  // },
+  // {
+  //   name:"Sameer",
+  //   dept:"IT",
+  //   college:"RGIT"
+  // },
+  // {
+  //   name:"Sumat",
+  //   dept:"IT",
+  //   college:"KKW"
+  // }
+]
+  return (
+    <div>
+   
+    {
+      data.map((currrElem)=>{
+     return(<Card name={currrElem}/>)
+      })
+    }
+    </div>
+  )
+}
+
+card.JS
+import React from 'react'
+
+const Card = (props) => {
+    console.log(props);
+  return (
+    <div style={{border:"2px solid red"}}>
+    <h2>{props.name}</h2>
+    <img 
+    style={{width:"100px"}}
+    src={require("./images/img1.png")} alt={"Carlie Anglemire"}/>
+    <p>{props.college}</p>
+      <p>{props.dept}</p>
+    </div>
+  )
+}
+
+export default Card

@@ -1,0 +1,39 @@
+.container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reset{
+    background-color: rgb(112, 254, 46);
+    cursor: pointer;
+}
+.box{
+    display: flex;
+    height: 180px;
+    width:180px;
+    border:5px solid red;
+    cursor: pointer;
+    margin: 2px 2px 4px 2px;
+}
+.board{
+    height: 600px;
+    width:564px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+   
+}
+.box img{
+    margin:50px;
+}
+.home{
+      background-color: rgb(112, 254, 46);
+    cursor: pointer;
+}

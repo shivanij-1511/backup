@@ -1,0 +1,42 @@
+.container-card{
+    width: 100%;
+    width: 820px;
+    height: 340px;
+    display: flex;
+    gap: 10px;
+    margin-inline:50px;
+margin: auto;
+border: 2px solid blue;
+}
+
+.card{
+    min-width: 70px;
+    height: 100%;
+    border-radius: 30px;
+    display:flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    position: relative;
+    transition: flex-grow 0.5s ease;
+border: 2px solid red;
+margin: auto;
+
+}
+
+
+.card:hover{
+    flex-grow: 7;
+}
+
+.card-content{
+    margin-left: 10px;
+    translate: 0 100%;
+    opacity: 0;
+}
+.card:hover .title{
+opacity: 0;
+translate: 0 0;
+}
+.title{
+    color: black;
+}

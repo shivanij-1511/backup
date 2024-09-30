@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.conference-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: lightgray;
+}
+
+.conference-page .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.conference-page nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.conference-page nav ul li {
+    margin: 0 15px;
+}
+
+.conference-page nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.conference-page .main {
+    display: flex;
+}
+
+.conference-page .sidebar {
+    width: 200px;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+}
+
+.conference-page .content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.conference-page .content img {
+    max-width: 100%;
+    height: auto;
+}

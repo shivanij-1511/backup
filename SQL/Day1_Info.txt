@@ -1,0 +1,326 @@
+12th September 2024
+
+
+Store and Maintain data in systematic and scientific way
+
+
+Name	Age	City	Salary
+Jojo	23	Delhi	5000
+25	Popat Lal	98000	Sonipat
+
+
+Database	=>	Collection of Inter related records
+
+21
+41
+14
+45
+65
+23
+10
+8
+97
+42
+32
+75
+59
+63
+28
+
+
+DBMS and RDBMS
+
+
+=>	Collection of inter related records
+DBMS	=>	collection of inter related records can be accessed by one user at a time
+This data is being maintained in the form of file
+Single User Environment
+Database or Table Level Lock System
+
+
+
+RDBMS	=>	Client Server Model
+Multiple users 
+Row level Locking
+Name
+Date of Birth
+Place of Birth
+Father's Name
+Mother's Name
+Qualification
+Experience
+Nationality
+Gender
+Marital Status
+Dependents
+Hobbies
+Aadhar Card
+PAN Card
+Bank Details
+Phone Number
+Email Address
+Disability
+Date Of Joining
+
+Link:	-
+	One of the table as a "Master" table	
+	Other table(s) will be considered as "Transaction" or "Child" tables
+
+	If I try to add a record directly to the "Transaction" or "Child" table
+	without entering the relevant record in the "Master" table, that record
+	will not be saved.
+
+	When we try to: -
+		=>	Delete a record from the "Master" table, the relevant record
+			if present in the "Transaction" table, will get deleted automatically
+
+		=>	Modify a record in the "Master" table, the relevant record
+			if present in the "Transaction" table, will get updated automatically
+
+The above rules fall under the category of "Referential Integrity".
+RDBMS is the only branch of DBMS that fulfils the "Referential Integrity" concept.
+
+
+Data Integrity Aspect
+	=>	Data in the table need to be maintained in a consistent manner
+	=>	An intersection of a row and a column must produce one and only value
+	=>	This value can be blank and it needs to be addressed explicitly as "NULL" value
+
+
+
+DBMS: -	dBase, FoxBase, FoxPro
+	.dbf - database file
+
+RDBMS: -	Oracle, SQL SERVER, MySQL, Informix, Access
+
+
+Maintain consistency with data
+
+Structured Query Language (SQL)
+	=>	Data Definition Language (DDL)
+		=>	Commands through which a proper schema is created
+		=>	Create a table, modify structure of a table, Delete the entire table
+	=>	Data Manipulation Language (DML)
+		=>	Commands through which content is passed to the schema
+		=>	add records, modify contents of the table,
+			view records, delete contents of the table
+	=>	Data or Transaction Control Language (DCL/TCL)
+		=>	Undo or Save a transaction
+
+RDBMS: -
+	database	=>	container
+	maintain or store tables along with their structure and data
+
+
+	1.	Server	=>	Name
+	2.	DB/RS/AS/IS	=>	
+	3.	Authentication Type
+			3.1	Window based
+			3.2	SQL SERVER based
+
+	You get access to default four databases: -
+		=>	master (default)
+		=>	model
+		=>	msdb
+		=>	tempdb
+
+	You create your own database and work with that database.
+
+	It creates two sets of files: -
+		=>	".mdf"	=>	"Master Data File"
+		=>	".ldf"	=>	"Log Data File"
+
+	C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA
+
+
+Step 1: -	Create our Database
+Step 2: -	We would like to create a table to store some data and this table we would like to create it
+	within the database that we created
+Step 3: -	Issue the "Create Table" command (DDL): -
+		Create Table <Tablename>
+		(
+	<column name> <datatype> [<size>] [constraint <constraint name> <constraint type>],
+	<column name> <datatype> [<size>] [constraint <constraint name> <constraint type>],
+	<column name> <datatype> [<size>] [constraint <constraint name> <constraint type>],
+	<column name> <datatype> [<size>] [constraint <constraint name> <constraint type>]
+		)
+
+	Create Table CybageDemoEmployee
+	(
+		EmpName varchar(30),
+		EmpAge tinyint,
+		EmpCity varchar(50),
+		EmpGender varchar(10),
+		EmpSalary int
+	)
+
+Step 4: -	Add record to the table for which we will use "insert into" command (DML Command): -
+	Insert Into <tablename> values (<values>,<values>,<values>,<values>)
+	
+	Correct way of writing "insert into" command: -
+	Insert Into <tablename> 
+	(<column name>,<column name>,<column name>,<column name>)
+	values (<values>,<values>,<values>,<values>)
+
+	Example: -
+	Insert Into CybageDemoEmployee
+	(EmpName, EmpAge, EmpCity, EmpGender, EmpSalary)
+	Values
+	('Jojo', 23, 'Delhi', 'Male', 5000)
+
+Step 5: -	View the entire contents of the table, use the "select" command (DML Command): -
+	
+	Select 
+		<column name>, <column name>, <column name>, <column name>
+	From
+		<table name>
+	[where <condition>=<true>]
+	[group by <column name> [having <condition>=<true>]]
+	[order by <column name> [desc]]
+
+	Example: -
+	
+	Select
+		EmpName, EmpAge, EmpCity, EmpGender, EmpSalary
+	From
+		CybageDemoEmployee
+
+	and
+
+	Select * from CybageDemoEmployee
+
+	Are Different.
+
+	The "Select * from CybageDemoEmployee" should be avoided at all costs.
+
+Step 6: -
+	If you plan to modify content of the table, then you will make use of "Update" command
+	(DML): -
+
+	update <tablename>
+		set <column name>=<value>, <column name>=<value>
+	[where <condition>=<true>]
+
+	Example: -
+	
+	update CybageDemoEmployee
+		set EmpName='Jojo Sharma', EmpAge=EmpAge + 2
+	where EmpName='Jojo'
+
+Step 7: -
+	Delete from <tablename> [where <condition>=<true>]
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
